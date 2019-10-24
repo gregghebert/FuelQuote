@@ -1,0 +1,34 @@
+{% extends "fuelest/base.html" %}
+
+{% block content %}
+<h1 style="color: white;"> Fuel Quote History</h1>
+<table class="table" style="color: white;">
+  <thead>
+    <tr>
+      <th scope="col" style="color: white;">#</th>
+      <th scope="col" style="color: white;">Gallons Requested</th>
+      <th scope="col" style="color: white;">Address</th>
+      <th scope="col" style="color: white;">Date</th>
+      <th scope="col" style="color: white;">Price</th>
+      <th scope="col" style="color: white;">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for quote in object_list %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td style="color: white;">{{ quote.gallons }}</td>
+      <td style="color: white;">{{ addr }}</td>
+      <td style="color: white;">{{ quote.date }}</td>
+      <td style="color: white;">{{ quote.price }}</td>
+      <td style="color: white;">{{ quote.total }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td></td>
+      <th scope="row" style="color: white;">No availabe quotes!</th>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

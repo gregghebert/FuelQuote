@@ -1,0 +1,20 @@
+{% extends "fuelest/base.html" %}
+
+{% block content %}
+{% if profile_made %}
+<h1 style="color: white; font-size: 35px;">Your Profile!</h1>
+<p style="color: white;">Full name: {{fullname}}</p>
+<p style="color: white;">Address 1: {{addr1}}</p>
+{% if addr2 %}
+<p style="color: white;">Address 2: {{addr2}}</p>
+{% endif %}
+<p style="color: white;">City: {{city}}</p>
+<p style="color: white;">State: {{state}}</p>
+<p style="color: white;">Zip: {{zip}}</p>
+
+<a href="edit" class="btn btn-light" role="button">Edit your profile</a>
+
+{% else %}
+<p>Please <a href="edit" class='btn btn-default' role='button'>create a profile!</a></p>
+{% endif %}
+{% endblock %}

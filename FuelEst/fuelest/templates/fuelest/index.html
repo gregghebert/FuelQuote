@@ -1,0 +1,14 @@
+{% extends "fuelest/base.html" %}
+
+{% block content %}
+<p style="font-family:georgia,garamond,serif;font-size:20px;
+font-style:italic;color: white; ">Welcome, {{ user.username }}!
+</p>
+{% if profile_made %}
+<p style="color: white; ">Use the tabs above to navigate this website. </p>
+{% else %}
+<p style="color: white; ">Please click the 'Create Your Profile!' tab above to
+    create a profile and access the quotes module.</p>
+{% endif %}
+
+{% endblock %}
